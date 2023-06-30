@@ -42,7 +42,7 @@
         .sinfavorito {
             text-align: center;
             padding: 20px;
-            height: 50vh;
+            /*height: 50vh*/;
         }
     </style>
 

@@ -15,6 +15,12 @@
             font-size: 12px;
         }
     </style>
+    <script type="text/javascript">
+        function cargarImagenPredeterminada() {
+            var imagen = document.getElementById('<%= imgProducto.ClientID %>');
+            imagen.setAttribute('src', '/Imagenes/imagenNoCarga.jpg');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -69,8 +75,7 @@
                             <asp:TextBox runat="server" ID="txtImagenUrl" CssClass="form-control"
                                 AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
                         </div>
-                        <asp:Image ImageUrl="https://www.palomacornejo.com/wp-content/uploads/2021/08/no-image.jpg"
-                            runat="server" ID="imgProducto" Width="400px" Height="400px" />
+                        <asp:Image runat="server" ID="imgProducto" Width="400px" Height="400px" onerror="cargarImagenPredeterminada()" />
                     <%--</ContentTemplate>
                 </asp:UpdatePanel>--%>
             </div>

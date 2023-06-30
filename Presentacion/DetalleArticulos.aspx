@@ -10,6 +10,12 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
+    <script type="text/javascript">
+        function cargarImagenPredeterminada() {
+            var imagen = document.getElementById('<%= imgArticulo.ClientID %>');
+            imagen.setAttribute('src', '/Imagenes/imagenNoCarga.jpg');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -67,8 +73,7 @@
                     <label for="txtImagenUrl" class="form-label">Imagen :</label>
                     <asp:TextBox runat="server" ID="txtImagenUrl" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
                 </div>
-                <asp:Image ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png"
-                    runat="server" ID="imgArticulo" Width="400px" Height="400px" />
+                <asp:Image  runat="server" ID="imgArticulo" Width="400px" Height="400px" onerror="cargarImagenPredeterminada()" />
             </div>
         </div>
     </div>

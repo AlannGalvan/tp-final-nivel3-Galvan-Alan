@@ -27,5 +27,23 @@ namespace Presentacion
             }
         }
 
+        protected void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string nombre = txtBuscar.Text.ToLower();
+            List<Articulos> resultados = new List<Articulos>();
+            ArticulosNegocio negocio = new ArticulosNegocio();
+            ListaArticulos = negocio.listarConSP();
+
+            foreach (Articulos articulo in ListaArticulos)
+            {
+                if (articulo.Nombre.ToLower().Contains(nombre) || articulo.Marca.Descripcion.ToLower().Contains(nombre))
+                {
+                    resultados.Add(articulo);
+                }
+            }
+
+            rptArticulos.DataSource = resultados;
+            rptArticulos.DataBind();
+        }
     }
 }

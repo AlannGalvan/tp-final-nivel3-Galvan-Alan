@@ -29,7 +29,7 @@
             font-size: 12px;
         }
     </style>
-    <script>
+   <%-- <script>
         function validar() {
             //capturar el control
             const txtNombre = document.getElementById("txtNombre");
@@ -56,7 +56,7 @@
 
             return true;
         }
-    </script>
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -64,11 +64,13 @@
             <div class="card">
                 <h2 class="card-title" style="text-align: center">Registro</h2>
                 <div>
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <asp:TextBox CssClass="form-control" ID="txtNombre" MaxLength="15" ClientIDMode="Static" placeholder="Nombre" runat="server" />
+                        <asp:RequiredFieldValidator ErrorMessage="Ingrese su nombre" ControlToValidate="txtNombre" CssClass="validacion" runat="server" />
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <asp:TextBox CssClass="form-control" ID="txtApellido" MaxLength="15" ClientIDMode="Static" placeholder="Apellido" runat="server" />
+                        <asp:RequiredFieldValidator ErrorMessage="Ingrese su apellido " ControlToValidate="txtApellido" CssClass="validacion" runat="server" />
                     </div>
                     <div class="mb-1">
                         <asp:TextBox CssClass="form-control" ID="txtEmail" TextMode="Email" placeholder="Correo electrónico" runat="server" />

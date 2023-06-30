@@ -18,7 +18,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
     <div class="container">
-        <div style="height: 130vh;">
+        <%--<div style="height: 130vh;">--%>
             <h1 style="text-align: center">Administración De Productos</h1>
             <div class="row">
                 <div class="col-6">
@@ -101,6 +101,6 @@
                 </Columns>
             </asp:GridView>
             <a href="FormularioProductos.aspx" class="btn btn-primary">Agregar</a>
-        </div>
+        <%--</div>--%>
     </div>
 </asp:Content>

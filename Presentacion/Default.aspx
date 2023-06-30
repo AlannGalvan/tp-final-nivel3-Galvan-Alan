@@ -2,20 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .search-bar {
-            margin-top: 20px;
-            margin-bottom: 40px;
+        h1 {
             text-align: center;
-        }
-
-        .search-button {
-            padding: 10px 30px;
-            background-color: #ffc107;
-            color: #212529;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            margin: 0;
         }
 
         .container {
@@ -50,9 +43,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container search-bar">
-        <h1>¡Bienvenidos!</h1>
-        
+    <div class="container-fluid">
+        <h1 class="header">¡Bienvenidos a la web de articulos!</h1>       
+        <br />
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control" placeholder="Buscar por nombre o marca..." AutoPostBack="True" OnTextChanged="txtBuscar_TextChanged"></asp:TextBox>
+            </div>
+        </div>
     </div>
 
     <div class="container">

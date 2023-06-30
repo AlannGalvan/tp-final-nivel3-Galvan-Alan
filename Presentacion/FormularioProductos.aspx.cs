@@ -124,7 +124,7 @@ namespace Presentacion
 
         protected void txtImagenUrl_TextChanged(object sender, EventArgs e)
         {
-            imgProducto.ImageUrl = txtImagenUrl.Text;
+            imgProducto.Attributes["src"] = txtImagenUrl.Text;
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

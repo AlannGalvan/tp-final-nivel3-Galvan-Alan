@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -77,7 +78,30 @@ namespace Presentacion
 
         protected void txtImagenUrl_TextChanged(object sender, EventArgs e)
         {
-                imgArticulo.ImageUrl = txtImagenUrl.Text;          
+
+            imgArticulo.Attributes["src"] = txtImagenUrl.Text;
+            //string imageUrl = txtImagenUrl.Text;
+
+            // Verificar si la URL de la imagen es válida
+            //if (IsValidImageUrl(imageUrl))
+            //{
+            //    imgArticulo.ImageUrl = imageUrl;
+            //}
+            //else
+            //{
+            //    // Establecer la imagen predeterminada si la URL no es válida
+            //    txtImagenUrl.Text = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
+            //}
+            //imgArticulo.ImageUrl = txtImagenUrl.Text;
+        }
+
+        private bool IsValidImageUrl(string url)
+        {
+            Uri uriResult;
+            bool isValidUrl = Uri.TryCreate(url, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            return isValidUrl;
         }
     }
 }
